@@ -87,24 +87,43 @@ input[type='color']::-webkit-color-swatch {
 
 .output {
     background-color: #f0f2fc;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
 }
 
 #code {
     width: 100%;
-    resize: none;
+    min-height: 80px;
+    resize: vertical;
     color: #30304a;
-    padding: 10px 20px;
-    background-color: transparent;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 2px solid #d5d5dc;
+    transition: 0.3s ease;
+}
+
+#code:focus {
+    border-color: #4a6ee0;
+    box-shadow: 0 0 0 3px rgba(74, 110, 224, 0.2);
 }
 
 #copy {
     font-size: 14px;
     background-color: #4a6ee0;
     color: #fff;
-    position: relative;
-    left: 85%;
-    bottom: 10px;
-    border-radius: 3px;
-    padding: 5px;
+    border-radius: 5px;
+    padding: 6px 12px;
     cursor: pointer;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    transition: 0.3s ease;
+}
+
+#copy:hover {
+    background-color: #3d5bd1;
 }
