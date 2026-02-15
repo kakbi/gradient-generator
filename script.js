@@ -19,9 +19,19 @@ function generateCode() {
 }
 
 function copyText() {
-    outputCode.select();
-    document.execCommand('copy');
-    alert('Gradient Copied!');
+    navigator.clipboard
+        .writeText(outputCode.value)
+        .then(() => {
+            const copyBtn = document.getElementById('copy');
+            copyBtn.textContent = 'Copied!';
+
+            setTimeout(() => {
+                copyBtn.textContent = 'Copy';
+            }, 1500);
+        })
+        .catch((err) => {
+            console.error('Failed to copy: ', err);
+        });
 }
 
 generateCode();
